@@ -14,5 +14,10 @@
     "Not open source"
   ],
   "timezone": "UTC",
-  "repository": "github.com/mikedklein/modern-django-wagtail-cookiecutter"
+  "repository": "github.com/mikedklein/modern-django-wagtail-cookiecutter",
+  "_copy_without_render": [
+    "*.html",
+    "*not_rendered_dir",
+    "rendered_dir/not_rendered_file.ini"
+  ]
 }
