@@ -1,0 +1,1 @@
+aws ecr get-login-password --region us-east-2 --profile=pbs-poc | docker login --username AWS --password-stdin {{aws_account_no}}.dkr.ecr.us-east-2.amazonaws.com

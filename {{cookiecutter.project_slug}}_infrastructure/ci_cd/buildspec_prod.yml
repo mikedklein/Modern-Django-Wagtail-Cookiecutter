@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - mkdir /tmp/src/
+      - mv $CODEBUILD_SRC_DIR/* /tmp/src/
+      - cd /tmp/src/
+      - python3 -m venv docker_env && source docker_env/bin/activate  && pip install -r requirements.txt && npm install && npm run-script build && zappa update production && zappa manage production "collectstatic --noinput" && deactivate && rm -rf docker_env
+  post_build:
+    commands:
+      - cd $CODEBUILD_SRC_DIR
+      - rm -rf /tmp/src/
+      - echo Build completed on `date`
