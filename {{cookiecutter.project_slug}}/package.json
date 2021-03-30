@@ -1,0 +1,48 @@
+{
+  "name": "{{cookiecutter.project_slug}}",
+  "version": "{{ cookiecutter.version }}",
+  "description": "{{cookiecutter.description}}",
+  {% if cookiecutter.open_source_license == 'Not open source' -%}
+  "private": true,
+  {%- endif %}
+  {% if cookiecutter.open_source_license != 'Not open source' -%}
+  "license": "{{open_source_license}}",
+  {%- endif %}
+  "scripts": {
+    "start": "concurrently -p \"[{name}]\" -n \"wagtail,webpack\" -c \"bgBlue.bold,bgGreen.bold\" \"npm run python-dev\" \"npm run client-dev\"",
+    "client-dev": "cross-env NODE_ENV=development webpack serve --config webpack/webpack.config.dev.js",
+    "python-dev": "./manage.py runserver --settings=config.settings.local",
+    "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://{{cookiecutter.repository}}"
+  },
+  "author": "{{cookiecutter.author_name}}",
+  "bugs": {
+    "url": "https://{{cookiecutter.repository}}/issues"
+  },
+  "homepage": "https://{{cookiecutter.repository}}#readme",
+  "engines": {
+    "node": "14.16.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "clean-webpack-plugin": "^3.0.0",
+    "concurrently": "^6.0.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.1.3",
+    "mini-css-extract-plugin": "^1.3.9",
+    "postcss-loader": "^5.2.0",
+    "sass": "^1.32.8",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "tailwindcss": "^2.0.4",
+    "ts-loader": "^8.0.18",
+    "typescript": "^4.2.3",
+    "webpack": "^5.27.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.7.3"
+  }
+}

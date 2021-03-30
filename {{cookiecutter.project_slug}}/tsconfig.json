@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "outDir": "{{cookiecutter.project_slug}}/client/build",
+    "rootDir": "{{cookiecutter.project_slug}}/client",
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "es5",
+    "allowJs": true,
+    "lib": [
+      "dom"
+    ]
+  },
+  "include": [
+    "{{cookiecutter.project_slug}}/client"
+  ],
+  "exclude": [
+    "{{cookiecutter.project_slug}}/client/build"
+  ]
+}
