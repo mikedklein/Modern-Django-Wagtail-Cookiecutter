@@ -16,7 +16,7 @@
   "timezone": "UTC",
   "repository": "github.com/mikedklein/modern-django-wagtail-cookiecutter",
   "repo_id": "mikedklein/modern-django-wagtail-cookiecutter",
-  "aws_account_no": "000000000000",
+  "aws_account": "000000000000",
   "aws_region": "us-east-2",
   "aws_profile": "default",
   "client": "my-client",

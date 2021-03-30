@@ -45,7 +45,7 @@ resource "aws_codepipeline" "{{cookiecutter.project_slug}}-pipeline" {
       output_artifacts = []
       owner            = "AWS"
       provider         = "CodeBuild"
-      region           = "{{aws_region}}"
+      region           = "{{cookiecutter.aws_region}}"
       run_order        = 1
       version          = "1"
     }
@@ -82,7 +82,7 @@ resource "aws_codepipeline" "{{cookiecutter.project_slug}}-pipeline" {
       output_artifacts = []
       owner            = "AWS"
       provider         = "CodeBuild"
-      region           = "{{aws_region}}"
+      region           = "{{cookiecutter.aws_region}}"
       run_order        = 1
       version          = "1"
     }
@@ -230,8 +230,8 @@ resource "aws_codebuild_project" "srl-storyamker-poc-prod" {
 
 }
 
-resource "aws_iam_role_policy" "CodeBuildBasePolicy-{{cookiecutter.project_slug}}-zappa-{{aws_region}}" {
-  name = "CodeBuildBasePolicy-{{cookiecutter.project_slug}}-zappa-{{aws_region}}"
+resource "aws_iam_role_policy" "CodeBuildBasePolicy-{{cookiecutter.project_slug}}-zappa-{{cookiecutter.aws_region}}" {
+  name = "CodeBuildBasePolicy-{{cookiecutter.project_slug}}-zappa-{{cookiecutter.aws_region}}"
   role = aws_iam_role.codebuild-{{cookiecutter.project_slug}}-cicd-service-role.id
 
   # TODO: Remove the wildcard here
@@ -246,8 +246,8 @@ resource "aws_iam_role" "codebuild-{{cookiecutter.project_slug}}-cicd-service-ro
   assume_role_policy = data.template_file.codebuild_assume_role.rendered
 }
 
-resource "aws_iam_role_policy" "CodeBuildBasePolicy-{{cookiecutter.project_slug}}-cicd-{{aws_region}}" {
-  name = "CodeBuildBasePolicy-{{cookiecutter.project_slug}}-cicd-{{aws_region}}"
+resource "aws_iam_role_policy" "CodeBuildBasePolicy-{{cookiecutter.project_slug}}-cicd-{{cookiecutter.aws_region}}" {
+  name = "CodeBuildBasePolicy-{{cookiecutter.project_slug}}-cicd-{{cookiecutter.aws_region}}"
   role = aws_iam_role.codebuild-{{cookiecutter.project_slug}}-cicd-service-role.id
 
   # TODO: Remove the wildcard here
