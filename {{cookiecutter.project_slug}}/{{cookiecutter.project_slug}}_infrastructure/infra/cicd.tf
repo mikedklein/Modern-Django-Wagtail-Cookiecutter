@@ -3,7 +3,7 @@ resource "aws_codepipeline" "{{cookiecutter.project_slug}}-pipeline" {
   role_arn = aws_iam_role.{{cookiecutter.project_slug}}-cicd-role.arn
 
   tags = {
-    Client = "PBS"
+    Client = "cookiecutter.client"
   }
 
   artifact_store {
@@ -95,7 +95,7 @@ resource "aws_codestarconnections_connection" "{{cookiecutter.project_slug}}" {
   name          = "{{cookiecutter.project_slug}}"
   provider_type = "GitHub"
   tags = {
-    Client = "PBS"
+    Client = "cookiecutter.client"
   }
 }
 
@@ -103,7 +103,7 @@ resource "aws_s3_bucket" "srl_storymaker_poc_cicd_bucket" {
   bucket = "{{cookiecutter.project_slug}}-cicd-bucket"
   acl    = "private"
   tags = {
-    Client = "PBS"
+    Client = "cookiecutter.client"
   }
   server_side_encryption_configuration {
     rule {
@@ -131,7 +131,7 @@ resource "aws_codebuild_project" "srl-storyamker-poc-dev" {
   queued_timeout = 480
   service_role   = aws_iam_role.codebuild-{{cookiecutter.project_slug}}-cicd-service-role.arn
   tags = {
-    Client = "PBS"
+    Client = "cookiecutter.client"
   }
 
   artifacts {
@@ -184,7 +184,7 @@ resource "aws_codebuild_project" "srl-storyamker-poc-prod" {
   queued_timeout = 480
   service_role   = aws_iam_role.codebuild-{{cookiecutter.project_slug}}-cicd-service-role.arn
   tags = {
-    Client = "PBS"
+    Client = "cookiecutter.client"
   }
 
   artifacts {
@@ -241,7 +241,7 @@ resource "aws_iam_role_policy" "CodeBuildBasePolicy-{{cookiecutter.project_slug}
 resource "aws_iam_role" "codebuild-{{cookiecutter.project_slug}}-cicd-service-role" {
   name = "codebuild-{{cookiecutter.project_slug}}-cicd-service-role"
   tags = {
-    Client = "PBS"
+    Client = "cookiecutter.client"
   }
   assume_role_policy = data.template_file.codebuild_assume_role.rendered
 }
@@ -257,7 +257,7 @@ resource "aws_iam_role_policy" "CodeBuildBasePolicy-{{cookiecutter.project_slug}
 resource "aws_iam_role" "{{cookiecutter.project_slug}}-cicd-role" {
   name = "{{cookiecutter.project_slug}}-cicd-role"
   tags = {
-    Client = "PBS"
+    Client = "cookiecutter.client"
   }
   assume_role_policy = data.template_file.codepipeline_assume_role.rendered
 }

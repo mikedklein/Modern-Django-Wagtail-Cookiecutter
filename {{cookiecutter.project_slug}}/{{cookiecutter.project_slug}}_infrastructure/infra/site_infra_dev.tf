@@ -18,7 +18,7 @@ resource "aws_s3_bucket" "{{cookiecutter.project_slug}}-static-asset-bucket" {
   }
 
   tags = {
-    Client = "PBS"
+    Client = "cookiecutter.client"
   }
 }
 
@@ -49,7 +49,7 @@ resource "aws_rds_cluster" "storymaker-postgresql-dev" {
   }
 
   tags = {
-    Client = "PBS"
+    Client = "cookiecutter.client"
   }
 
   kms_key_id        = var.kms_key_id_dev
@@ -59,7 +59,7 @@ resource "aws_rds_cluster" "storymaker-postgresql-dev" {
 resource "aws_secretsmanager_secret" "{{cookiecutter.project_slug}}-secrets-dev" {
   name = "{{cookiecutter.project_slug}}-dev"
   tags = {
-    "Client" = "PBS"
+    "Client" = "cookiecutter.client"
   }
 }
 
@@ -71,7 +71,7 @@ resource "aws_cloudfront_distribution" "{{cookiecutter.project_slug}}-cf-dev" {
   price_class      = "PriceClass_All"
   retain_on_delete = false
   tags = {
-    "Client" = "PBS"
+    "Client" = "cookiecutter.client"
   }
   wait_for_deployment = true
 

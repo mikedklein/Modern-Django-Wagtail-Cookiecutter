@@ -1,0 +1,13 @@
+pytz==2020.1  # https://github.com/stub42/pytz
+python-slugify==4.0.1  # https://github.com/un33k/python-slugify
+Pillow==8.1.2  # https://github.com/python-pillow/Pillow
+
+# Django
+# ------------------------------------------------------------------------------
+django==3.0.10  # pyup: < 3.1  # https://www.djangoproject.com/
+django-environ==0.4.5  # https://github.com/joke2k/django-environ
+django-model-utils==4.0.0  # https://github.com/jazzband/django-model-utils
+
+# Wagtail
+# -------------------------------------------------------------------------------
+wagtail==2.12.3

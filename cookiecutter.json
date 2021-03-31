@@ -20,5 +20,6 @@
   "aws_region": "us-east-2",
   "aws_profile": "default",
   "client": "my-client",
+  "debug": "n",
   "_copy_without_render": ["*.html"]
 }

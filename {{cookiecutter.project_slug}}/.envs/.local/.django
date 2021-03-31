@@ -1,0 +1,4 @@
+# General
+# Put any local environment variables heres for use in your Django Docker Container
+# ---------------------------------------------------------------------------------
+USE_DOCKER=yes
