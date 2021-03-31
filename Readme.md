@@ -1,4 +1,4 @@
-# Modern Djano Wagtail CookieCutter
+# Modern Django Wagtail CookieCutter
 
 Powered by [CookieCutter](https://github.com/cookiecutter/cookiecutter) and heavily influenced by [Cookiecutter Django](https://github.com/pydanny/cookiecutter-django)
 
