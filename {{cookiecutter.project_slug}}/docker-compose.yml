@@ -8,7 +8,7 @@ services:
   django:
     build:
       context: .
-      dockerfile: ./compose/local/django/Dockerfile
+      dockerfile: ./compose/django/Dockerfile
     image: {{ cookiecutter.project_slug }}_local_django
     container_name: django
     depends_on:
@@ -25,10 +25,7 @@ services:
     command: /start
 
   postgres:
-    build:
-      context: .
-      dockerfile: ./compose/production/postgres/Dockerfile
-    image: {{ cookiecutter.project_slug }}_production_postgres
+    image: postgres:latest
     container_name: postgres
     volumes:
       - local_postgres_data:/var/lib/postgresql/data:Z

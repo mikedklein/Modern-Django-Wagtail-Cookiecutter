@@ -19,7 +19,7 @@ RUN apt-get update \
 
 # Install node
 # Download latest nodejs binary
-RUN curl https://nodejs.org/dist/v14.15.4/node-v14.15.4-linux-x64.tar.xz -O
+RUN curl https://nodejs.org/dist/v14.16.0/node-v14.16.0-linux-x64.tar.xz -O
 # Extract & install
 RUN tar -xf node-v14.16.0-linux-x64.tar.xz
 RUN ln -s /node-v14.16.0-linux-x64/bin/node /usr/local/bin/node
