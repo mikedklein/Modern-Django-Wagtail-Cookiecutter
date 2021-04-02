@@ -30,8 +30,6 @@ RUN ln -s /node-v14.16.0-linux-x64/bin/npx /usr/local/bin/npx
 COPY ./requirements /requirements
 RUN pip install -r /requirements/local.txt
 
-# Install Node dependencies
-RUN npm install
 
 COPY ./compose/django/entrypoint /entrypoint
 RUN sed -i 's/\r$//g' /entrypoint

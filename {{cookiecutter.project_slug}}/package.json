@@ -11,7 +11,7 @@
   "scripts": {
     "start": "concurrently -p \"[{name}]\" -n \"wagtail,webpack\" -c \"bgBlue.bold,bgGreen.bold\" \"npm run python-dev\" \"npm run client-dev\"",
     "client-dev": "cross-env NODE_ENV=development webpack serve --config webpack/webpack.config.dev.js",
-    "python-dev": "./manage.py runserver_plus --settings=config.settings.local",
+    "python-dev": "python manage.py runserver_plus --settings=config.settings.local",
     "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.prod.js"
   },
   "repository": {

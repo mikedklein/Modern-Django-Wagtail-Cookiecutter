@@ -1,0 +1,46 @@
+### VisualStudioCode template
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Python
+*.egg-info
+*.pot
+*.py[co]
+*.zip
+*.gz
+.tox/
+__pycache__
+Pipfile*
+# OS
+.DS_Store
+
+# Build Assets
+MANIFEST
+dist/
+docs/_build/
+docs/locale/
+
+# Tests
+tests/coverage_html/
+tests/.coverage
+tests/report/
+
+# Enironment files
+.env
+venv
+
+# Docker env
+*docker_env*
+# Ignore static folder contents but keep if for reference.
+{{cookiecutter.project_slug}}/static/*
+!{{cookiecutter.project_slug}}/static/.gitkeep
+# Ignore static folder contents but keep if for reference.
+{{cookiecutter.project_slug}}/client/build/*
+!{{cookiecutter.project_slug}}/client/build/.gitkeep
+# Node
+node_modules/
+# Infrastructure as Code
+infra/.terraform*

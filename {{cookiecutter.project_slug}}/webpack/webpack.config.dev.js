@@ -13,6 +13,7 @@ module.exports = merge(common, {
     },
     inline: true,
     hot: true,
+    host: "0.0.0.0",
     contentBase: [
       path.resolve(__dirname, '../build/js'),
       path.resolve(__dirname, '../build/styles'),

@@ -9,7 +9,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
+./build
 develop-eggs/
 dist/
 downloads/
@@ -215,3 +215,6 @@ tags
 .idea/
 
 .pytest_cache/
+
+# Keep generated project assets
+!build/.gitkeep

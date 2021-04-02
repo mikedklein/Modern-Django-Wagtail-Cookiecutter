@@ -1,6 +1,5 @@
 {% load static wagtailuserbar %}
 {% load static %}
-{% load component_tags %}
 
 <!DOCTYPE html>
 <html class="no-js" lang="en">
@@ -35,7 +34,6 @@
 <body class="{% block body_class %}{% endblock %}">
   {% wagtailuserbar %}
   <div class="main-grid grid grid-cols-1 lg:grid-cols-5">
-    {% include './side-nav.html' %}
     <div>
       {% block content %}{% endblock %}
     </div>

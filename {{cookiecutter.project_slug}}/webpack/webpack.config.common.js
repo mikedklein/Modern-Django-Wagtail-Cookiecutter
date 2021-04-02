@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: '../{{cookiecutter.project_slug}}/client/index.ts',
+  entry: './{{cookiecutter.project_slug}}/client/index.ts',
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({ filename: 'styles/app.css' }),
