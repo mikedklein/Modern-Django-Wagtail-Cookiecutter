@@ -215,6 +215,3 @@ tags
 .idea/
 
 .pytest_cache/
-
-# Keep generated project assets
-!build/.gitkeep

@@ -4,6 +4,17 @@ set -o errexit
 set -o pipefail
 set -o nounset
 
+echo Running migrations
+python manage.py migrate --noinput --settings=config.settings.local
 
-python manage.py migrate
+echo Create dummy user if none exists
+python manage.py create_super_user_if_none_exists --user=admin --password=admin --settings=config.settings.local
+
+echo Collecting static-files
+python manage.py collectstatic --noinput --settings=config.settings.local
+
+echo Create cache table
+python manage.py createcachetable --settings=config.settings.local
+
+echo Starting Server
 npm run start

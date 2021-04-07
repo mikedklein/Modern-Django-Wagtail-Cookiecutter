@@ -44,3 +44,6 @@ venv
 node_modules/
 # Infrastructure as Code
 infra/.terraform*
+# Generated Static Files
+{{cookiecutter.project_slug}}/staticfiles/
+!{{cookiecutter.project_slug}}/staticfiles/.gitkeep
