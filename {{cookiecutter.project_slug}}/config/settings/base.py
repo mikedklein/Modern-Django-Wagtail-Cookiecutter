@@ -73,7 +73,9 @@ DJANGO_APPS = [
     "django.contrib.admin",
     "django.forms",
 ]
+
 WAGTAIL_APPS = [
+    "wagtail.contrib.search_promotions",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.embeds",
@@ -84,6 +86,9 @@ WAGTAIL_APPS = [
     "wagtail.images",
     "wagtail.search",
     "wagtail.admin",
+    "wagtail.api.v2",
+    "wagtail.contrib.modeladmin",
+    "wagtail.contrib.routable_page",
     "wagtail.core",
 ]
 
